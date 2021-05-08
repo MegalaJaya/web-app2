@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------
+Test set: war.GreetingControllerTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.225 s <<< FAILURE! - in war.GreetingControllerTest
+greeting  Time elapsed: 0.134 s  <<< FAILURE!
+java.lang.AssertionError: 
+Response body expected:<{"id":1,"content":"Hello, World!"}> but was:<{"id":1,"content":"Hello, World 123!"}>
+
+> GET /greeting
+> WebTestClient-Request-Id: [1]
+
+No content
+
+< 200 OK OK
+< Content-Type: [application/json]
+< Content-Length: [38]
+
+{"id":1,"content":"Hello, World 123!"}
+
+	at war.GreetingControllerTest.greeting(GreetingControllerTest.java:22)
+Caused by: java.lang.AssertionError: Response body expected:<{"id":1,"content":"Hello, World!"}> but was:<{"id":1,"content":"Hello, World 123!"}>
+	at war.GreetingControllerTest.greeting(GreetingControllerTest.java:22)
+
